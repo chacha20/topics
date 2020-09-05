@@ -26,6 +26,10 @@ systemctl start firewalld
 # 重新加载服务
 firewall-cmd --reload
 ```
+## 区域
+firewalld有区域的概念，内置的区域有：drop/block/public/external/dmz/work/home/internal/trusted。
+详细描述在这里看：https://firewalld.org/documentation/zone/predefined-zones.html
+对于CentOS/Ubuntu来说，装好了firewalld后，它的默认设置是将现有网卡加入public区域中，如果没有多网卡多区域的需求的话，可以将代码中--zone=public省略，后面的代码均为省略了该参数的代码，如果要对其它区域操作，而不是对默认区域操作，必须加上--zone参数。
 ```
 # 查看public区域的参数清单（默认隐藏了--zone=public参数）
 firewall-cmd --list-all
