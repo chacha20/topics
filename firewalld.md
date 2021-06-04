@@ -142,7 +142,7 @@ firewall-cmd --reload
 # 指定source段使用ipset=ALLOWED
 # 指定port段的两个参数：port和protocol，注意代码中两个port不是写错的，第一个表示port配置段，第二个表示port参数
 # accept表示接收，如果是拒绝访问的话可以写为drop，共有这几种：accept|reject|drop|mark
-firewall-cmd --permanent --add-rich-rule="rule family=ipv3 source ipset=ALLOWED port port=22 protocol=tcp accept"
+firewall-cmd --permanent --add-rich-rule="rule family=ipv4 source ipset=ALLOWED port port=22 protocol=tcp accept"
 firewall-cmd --reload
 ```
 ```
